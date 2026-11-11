@@ -1,5 +1,6 @@
 # trackoutline
 
+[![PyPI](https://img.shields.io/pypi/v/trackoutline.svg)](https://pypi.org/project/trackoutline/)
 [![CI](https://github.com/cedricduriau/trackoutline/actions/workflows/ci.yml/badge.svg)](https://github.com/cedricduriau/trackoutline/actions/workflows/ci.yml)
 [![codecov](https://codecov.io/gh/cedricduriau/trackoutline/graph/badge.svg)](https://codecov.io/gh/cedricduriau/trackoutline)
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://github.com/cedricduriau/trackoutline/blob/main/pyproject.toml)
@@ -8,10 +9,17 @@
 
 Turn a Google Maps directions link into a minimalist, closed, smooth track-circuit outline (PNG or SVG).
 
-## Usage
+## Install
 
 ```
 pip install trackoutline
+```
+
+From source: `pip install .` in a checkout (see Development for dev setup).
+
+## Usage
+
+```
 trackoutline "<google maps /dir/ url>" -o track.png -c "#e10600" --markers
 ```
 
