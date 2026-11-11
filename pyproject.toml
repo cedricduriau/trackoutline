@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "trackoutline"
+version = "0.1.0"
+description = "Turn a Google Maps directions link into a minimalist track outline (PNG or SVG)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{ name = "Cédric Duriau" }]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Visualization",
+]
+dependencies = ["numpy", "matplotlib"]
+
+[project.optional-dependencies]
+dev = ["ruff", "pytest", "pytest-cov"]
+
+[project.urls]
+Repository = "https://github.com/cedricduriau/trackoutline"
+
+[project.scripts]
+trackoutline = "trackoutline.cli:main"
+
+[tool.setuptools]
+packages = ["trackoutline"]
+
+[tool.setuptools.package-data]
+trackoutline = ["data/*.json"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=trackoutline --cov-report=term-missing --cov-report=xml"
+
+[tool.coverage.run]
+branch = true
+omit = ["trackoutline/__main__.py"]
